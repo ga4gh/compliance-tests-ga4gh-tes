@@ -6,7 +6,7 @@ versions:
 tags:
   - schema_validation_only
 jobs:
-  - $ref: "./templates/create_task_template.yml"
-  - $ref: "./templates/list_tasks_template.yml"
+  - $ref: "compliance-tests-ga4gh-tes/templates/create_task_template.yml"
+  - $ref: "compliance-tests-ga4gh-tes/templates/list_tasks_template.yml"
     args:
       view_value: "BASIC"

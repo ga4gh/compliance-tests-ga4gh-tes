@@ -5,8 +5,8 @@ versions:
   - 1.1.0
 tags: []
 jobs:
-  - $ref: "./templates/create_task_template.yml"
-  - $ref: "./templates/create_task_template.yml"
+  - $ref: "compliance-tests-ga4gh-tes/templates/create_task_template.yml"
+  - $ref: "compliance-tests-ga4gh-tes/templates/create_task_template.yml"
   - name: list_tasks
     description: Set page_size as 1
     endpoint: /tasks
