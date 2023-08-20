@@ -1,4 +1,4 @@
-"""Module compliance_suite.models.v1_1_0_specs.py
+"""Module compliance-tests-ga4gh-tes.models.v1_1_0_specs.py
 
 Pydantic generated models for TES API Specs v1.1.0
 """
