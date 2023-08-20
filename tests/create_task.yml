@@ -6,4 +6,4 @@ versions:
 tags:
   - schema_validation_only
 jobs:
-  - $ref: "compliance-tests-ga4gh-tes/templates/create_task_template.yml"
+  - $ref: "templates/create_task_template.yml"

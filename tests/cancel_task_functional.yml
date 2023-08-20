@@ -5,8 +5,8 @@ versions:
   - 1.1.0
 tags: []
 jobs:
-  - $ref: "compliance-tests-ga4gh-tes/templates/create_task_template.yml"
-  - $ref: "compliance-tests-ga4gh-tes/templates/cancel_task_template.yml"
+  - $ref: "templates/create_task_template.yml"
+  - $ref: "templates/cancel_task_template.yml"
   - name: get_task
     description: Retrieve the list of tasks tracked by the TES server
     endpoint: /tasks/{id}
