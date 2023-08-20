@@ -1,0 +1,69 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "description": "The YAML test file object",
+  "additionalProperties": false,
+  "properties": {
+    "description": {
+      "type": "string",
+      "description": "The description of the Test file"
+    },
+    "service": {
+      "type": "string",
+      "description": "The GA4GH service name",
+      "enum": [
+        "TES"
+      ]
+    },
+    "versions": {
+      "type": "array",
+      "description": "The list of API versions against which the test file can be run",
+      "items": {
+        "type": "string"
+      }
+    },
+    "tags": {
+      "type": "array",
+      "description": "The list of tags which define the test file. Example. Logical - No Polling needed, Functional - Polling needed. Always add 3 tags - Individual tag based on test name, TES endpoint tag and All tag",
+      "items": {
+        "type": "string"
+      },
+      "minItems": 0
+    },
+    "jobs": {
+      "type": "array",
+      "description": "The sub-job data containing request details",
+      "items": {
+        "oneOf": [
+          {
+            "$ref": "common_schema.json#/definitions/job"
+          },
+          {
+            "type": "object",
+            "description": "The template object to be referenced",
+            "additionalProperties": false,
+            "properties": {
+              "$ref":{
+                "type": "string",
+                "description": "The relative path to a test template."
+              },
+              "args": {
+                "type": "object",
+                "additionalProperties": true
+              }
+            },
+            "required": [
+              "$ref"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "required": [
+    "service",
+    "versions",
+    "tags",
+    "jobs"
+  ]
+}
