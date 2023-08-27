@@ -3,7 +3,8 @@
 Pydantic generated models for TES API Specs v1.0.0
 """
 
-from __future__ import annotations
+# Comment the annotations as a workaround to known pydantic issue - https://github.com/pydantic/pydantic/issues/704
+# from __future__ import annotations
 
 from datetime import datetime
 from enum import Enum
