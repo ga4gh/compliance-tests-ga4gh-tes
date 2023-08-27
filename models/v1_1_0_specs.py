@@ -3,7 +3,7 @@
 Pydantic generated models for TES API Specs v1.1.0
 """
 
-from __future__ import annotations
+# from __future__ import annotations
 
 from datetime import datetime
 from enum import Enum
