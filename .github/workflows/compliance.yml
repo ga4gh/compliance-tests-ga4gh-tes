@@ -47,6 +47,8 @@ jobs:
         with:
           python-version: ${{ matrix.python-version }}
       - name: Install dependencies
-        run: python -m pip install -i https://test.pypi.org/simple/ openapi-compliance-suite==0.0.22
+        run: |
+          python -m pip install jsonschema==3.2.0
+          python -m pip install -i https://test.pypi.org/simple/ openapi-compliance-suite==0.0.22
       - name: Run compliance tests
         run: compliance-suite report --server ${{ github.event.inputs.server }} --version ${{ github.event.inputs.version }} ${{ github.event.inputs.extra_params }}
