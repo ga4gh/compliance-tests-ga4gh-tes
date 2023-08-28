@@ -84,3 +84,9 @@ jobs:
           ls -la
       - name: Run compliance tests
         run: compliance-suite report --server ${{ github.event.inputs.server }} --version ${{ github.event.inputs.version }} ${{ github.event.inputs.extra_params }}
+      - name: Test
+        run: |
+          echo "Current Working Directory: $PWD"
+          echo "GitHub Workspace: $GITHUB_WORKSPACE"
+          echo "Listing Files and Folders:"
+          ls -la
