@@ -1,9 +1,9 @@
 name: Run compliance tests
 
 on:
-  push:
-    branches:
-      - feature/tests
+#  push:
+#    branches:
+#      - feature/tests
   workflow_dispatch:
     inputs:
 #      test_repo_url:
@@ -37,23 +37,23 @@ jobs:
           echo "server: ${{ github.event.inputs.server }}"
           echo "version: ${{ github.event.inputs.version }}"
           echo "extra_params : ${{ github.event.inputs.extra_params }}"
-      - name: Test
-        run: |
-          echo "Current Working Directory: $PWD"
-          echo "GitHub Workspace: $GITHUB_WORKSPACE"
-          echo "Listing Files and Folders:"
-          ls -la
+#      - name: Test
+#        run: |
+#          echo "Current Working Directory: $PWD"
+#          echo "GitHub Workspace: $GITHUB_WORKSPACE"
+#          echo "Listing Files and Folders:"
+#          ls -la
       - name: Checkout current repository
         uses: actions/checkout@v3
         with:
           ref: feature/tests
 #          path: tmp/testdir/
-      - name: Test
-        run: |
-          echo "Current Working Directory: $PWD"
-          echo "GitHub Workspace: $GITHUB_WORKSPACE"
-          echo "Listing Files and Folders:"
-          ls -la
+#      - name: Test
+#        run: |
+#          echo "Current Working Directory: $PWD"
+#          echo "GitHub Workspace: $GITHUB_WORKSPACE"
+#          echo "Listing Files and Folders:"
+#          ls -la
 #          cd tmp
 #          ls -la
 #          cd testdir
@@ -76,25 +76,25 @@ jobs:
           python -m pip install jinja2==3.1.2
           python -m pip install dotmap==1.3.30
           python -m pip install -i https://test.pypi.org/simple/ openapi-compliance-suite
-      - name: Test
-        run: |
-          echo "Current Working Directory: $PWD"
-          echo "GitHub Workspace: $GITHUB_WORKSPACE"
-          echo "Listing Files and Folders:"
-          ls -la
-      - name: Validate test suite
-        run: compliance-suite validate
-      - name: Test
-        run: |
-          echo "Current Working Directory: $PWD"
-          echo "GitHub Workspace: $GITHUB_WORKSPACE"
-          echo "Listing Files and Folders:"
-          ls -la
+#      - name: Test
+#        run: |
+#          echo "Current Working Directory: $PWD"
+#          echo "GitHub Workspace: $GITHUB_WORKSPACE"
+#          echo "Listing Files and Folders:"
+#          ls -la
+#      - name: Validate test suite
+#        run: compliance-suite validate
+#      - name: Test
+#        run: |
+#          echo "Current Working Directory: $PWD"
+#          echo "GitHub Workspace: $GITHUB_WORKSPACE"
+#          echo "Listing Files and Folders:"
+#          ls -la
       - name: Run compliance tests
         run: compliance-suite report --server ${{ github.event.inputs.server }} --version ${{ github.event.inputs.version }} ${{ github.event.inputs.extra_params }}
-      - name: Test
-        run: |
-          echo "Current Working Directory: $PWD"
-          echo "GitHub Workspace: $GITHUB_WORKSPACE"
-          echo "Listing Files and Folders:"
-          ls -la
+#      - name: Test
+#        run: |
+#          echo "Current Working Directory: $PWD"
+#          echo "GitHub Workspace: $GITHUB_WORKSPACE"
+#          echo "Listing Files and Folders:"
+#          ls -la
