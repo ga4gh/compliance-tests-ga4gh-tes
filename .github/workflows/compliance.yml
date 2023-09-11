@@ -54,10 +54,10 @@ jobs:
           echo "GitHub Workspace: $GITHUB_WORKSPACE"
           echo "Listing Files and Folders:"
           ls -la
-          cd tmp
-          ls -la
-          cd testdir
-          ls -la
+#          cd tmp
+#          ls -la
+#          cd testdir
+#          ls -la
       - name: Set up Python ${{ matrix.python-version }}
         uses: actions/setup-python@v2
         with:
