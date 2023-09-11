@@ -47,7 +47,7 @@ jobs:
         uses: actions/checkout@v3
         with:
           ref: feature/tests
-          path: tmp/testdir/
+#          path: tmp/testdir/
       - name: Test
         run: |
           echo "Current Working Directory: $PWD"
