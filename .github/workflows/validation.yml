@@ -26,6 +26,6 @@ jobs:
           python-version: ${{ matrix.python-version }}
       - name: Install openapi-compliance-suite
         run: |
-          python -m pip install -i https://test.pypi.org/simple/ openapi-compliance-suite
+          python -m pip install -i https://test.pypi.org/simple/ openapi-compliance-suite==0.0.52
       - name: Validate test suite
         run: compliance-suite validate
