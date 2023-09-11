@@ -3,7 +3,7 @@ name: Run compliance tests
 on:
   push:
     branches:
-      - feature/tests
+      - main
   workflow_dispatch:
 
 jobs:
@@ -26,6 +26,6 @@ jobs:
           python-version: ${{ matrix.python-version }}
       - name: Install openapi-compliance-suite
         run: |
-          python -m pip install -i https://test.pypi.org/simple/ openapi-compliance-suite==0.0.52
+          python -m pip install openapi-compliance-suite
       - name: Validate test suite
         run: compliance-suite validate
